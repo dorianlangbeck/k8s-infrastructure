@@ -12,3 +12,7 @@ resources:
   - services/canary-preview.yaml
   - ingresses/canary.yaml
   - ingresses/canary-preview.yaml
+
+images:
+  - name: argoproj/rollouts-demo
+    newTag: blue
