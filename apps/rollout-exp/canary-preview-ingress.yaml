@@ -11,7 +11,7 @@ spec:
   - host: canary-preview.dev.argoproj.io
     http:
       paths:
-      - path: /
+      - path: /preview
         pathType: Prefix
         backend:
           service:
