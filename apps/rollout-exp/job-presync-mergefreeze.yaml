@@ -16,7 +16,7 @@ spec:
           args:
             - -X
             - POST
-            - https://www.mergefreeze.com/api/branches/dorianlangbeck/testing/main/?access_token=${ACCESS_TOKEN}
+            - https://www.mergefreeze.com/api/branches/dorianlangbeck/testing/main/?access_token=$(ACCESS_TOKEN)
             - -d
             - frozen=true&user_name=ArgoCD PreSync&note=Sync in progress
           env:
