@@ -11,7 +11,7 @@ spec:
       containers:
       - name: curl
         image: alpine/curl
-        command:
+        args:
           - -X
           - POST
           - https://www.mergefreeze.com/api/branches/dorianlangbeck/testing/main/?access_token=35508b80-fedb-4206-bad4-c0d350aed95e
