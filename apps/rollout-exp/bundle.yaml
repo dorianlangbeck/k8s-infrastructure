@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: argoproj/rollouts-demo:blue
+        image: argoproj/rollouts-demo:yellow
         env:
         - name: REDISHOST
           value: "redisapp:6379"
