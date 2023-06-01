@@ -76,12 +76,14 @@ spec:
     canary:
       stableService: realtimeapp-stable
       canaryService: realtimeapp-canary
-      #trafficRouting:
-        #nginx:
-          #stableIngress: realtimeapp-ingress
+      trafficRouting:
+        nginx:
+          stableIngress: realtimeapp-ingress
       steps:
-      - setWeight: 50
-      - pause: {}
+      - setWeight: 20
+      - pause: {duration: 10}
+      - setWeight: 60
+      - pause: {duration: 10}
 ---
 apiVersion: v1
 kind: Service
