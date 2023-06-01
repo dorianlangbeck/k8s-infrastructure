@@ -8,7 +8,7 @@ metadata:
     ingress.kubernetes.io/app-root: /
 spec:
   rules:
-  - host: canary-preview.exp.argoproj.io
+  - host: canary-preview.exp.local
     http:
       paths:
       - path: /
