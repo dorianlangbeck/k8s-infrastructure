@@ -2,7 +2,8 @@
 set -e -o pipefail
 
 if [ $# -ne 1 ]; then
-    echo >&2 "Usage: ${0} <new-tag>"
+    echo >&2 "Usage: ${0} <color-tag>"
+    echo >&2 "Supported colors are: red, orange, yellow, green, blue and purple."
     exit 1
 fi
 
