@@ -11,14 +11,19 @@ spec:
   template:
     spec:
       containers:
-      - name: curl
-        image: alpine/curl
-        args:
-          - -X
-          - POST
-          - https://www.mergefreeze.com/api/branches/dorianlangbeck/testing/main/?access_token=35508b80-fedb-4206-bad4-c0d350aed95e
-          - -d
-          - frozen=true&user_name=ArgoCD PreSync&note=Sync in progress
-
+        - name: curl
+          image: alpine/curl
+          args:
+            - -X
+            - POST
+            - https://www.mergefreeze.com/api/branches/dorianlangbeck/testing/main/?access_token=${ACCESS_TOKEN}
+            - -d
+            - frozen=true&user_name=ArgoCD PreSync&note=Sync in progress
+          env:
+            - name: ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: merge-freeze
+                  key: access-token
       restartPolicy: Never
   backoffLimit: 2
