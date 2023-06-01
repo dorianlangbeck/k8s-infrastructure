@@ -2,8 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: canary-demo
-  annotations:
-    repository: dorianlangbeck/testing
 
 spec:
   replicas: 5
