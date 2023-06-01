@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mergefreeze-freeze
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+spec:
+  template:
+    spec:
+      containers:
+      - name: curl
+        image: alpine/curl
+        command:
+          - -X
+          - POST
+          - https://www.mergefreeze.com/api/branches/dorianlangbeck/testing/main/?access_token=35508b80-fedb-4206-bad4-c0d350aed95e
+          - -d
+          - frozen=true&user_name=ArgoCD PreSync&note=Sync in progress
+
+      restartPolicy: Never
+  backoffLimit: 2
