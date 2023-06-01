@@ -124,7 +124,7 @@ spec:
   - host: example.com
     http:
       paths:
-      - path: /
+      - path: /realtimeapp
         pathType: Prefix
         backend:
           service:
