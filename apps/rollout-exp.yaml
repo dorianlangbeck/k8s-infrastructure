@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rollouts-exp
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rollouts-exp
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: apps/rollout-exp/
+    repoURL: https://github.com/dorianlangbeck/k8s-infrastructure
+    targetRevision: HEAD
+  destination:
+    namespace: rollouts-exp
+    server: https://kubernetes.default.svc
